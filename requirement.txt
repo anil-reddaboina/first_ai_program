@@ -1,0 +1,4 @@
+ollama
+ipykernel
+gradio
+requests
