@@ -1,7 +1,7 @@
 import gradio as gr
 import requests
 
-OLLAMA_MODEL = "llama3.2"  # or mistral, gemma, etc.
+OLLAMA_MODEL = "gemma3:1b"  # or mistral, gemma, etc.
 OLLAMA_URL = "http://localhost:11434/api/chat"
 
 def chat_with_ollama(history, message):
