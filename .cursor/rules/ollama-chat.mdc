@@ -3,3 +3,43 @@ description:
 globs:
 alwaysApply: false
 ---
+# Ollama Chat Application Guide
+
+## Overview
+This is a Gradio-based web application that provides a chat interface to interact with Ollama models locally. The application runs on `localhost:8089` and allows users to have conversations with various Ollama models like llama3.2, mistral, or gemma.
+
+## Key Components
+
+### Main Application File
+The core application logic is in [chat_with_model.py](mdc:ollama_first/chat_with_model.py), which contains:
+
+- Ollama API configuration (model selection and endpoint)
+- Chat interface implementation using Gradio
+- Message handling and response processing
+
+### Important Constants
+- `OLLAMA_MODEL`: Currently set to "llama3.2" (can be changed to other models)
+- `OLLAMA_URL`: Points to local Ollama API endpoint (http://localhost:11434/api/chat)
+
+### UI Components
+The application provides:
+- A chat interface with message history
+- A text input box for user messages
+- A send button for submitting messages
+- Support for both button clicks and Enter key to send messages
+
+### API Integration
+The application communicates with Ollama through HTTP POST requests:
+- Endpoint: http://localhost:11434/api/chat
+- Request format: JSON with model name and message content
+- Response handling includes error management and message formatting
+
+## Usage Notes
+1. Ensure Ollama is running locally before starting the application
+2. The application runs on port 8089 by default
+3. Messages are processed synchronously with a 60-second timeout
+4. Chat history is maintained within the session
+
+## Dependencies
+- gradio: For the web interface
+- requests: For API communication with Ollama

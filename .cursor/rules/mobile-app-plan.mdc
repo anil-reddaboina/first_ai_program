@@ -3,3 +3,88 @@ description:
 globs:
 alwaysApply: false
 ---
+# Ollama Chat Mobile App Plan
+
+## Architecture Overview
+The mobile application will be built using Flutter, providing a native experience on both iOS and Android while maintaining the core Ollama chat functionality.
+
+### Components
+1. **Mobile App (Flutter)**
+   - Cross-platform UI using Flutter
+   - HTTP client for Ollama API communication
+   - Local state management
+   - Secure storage for settings
+
+2. **Backend (Ollama)**
+   - Continues to run on local machine
+   - Accessible via local network
+   - API endpoint remains at http://localhost:11434/api/chat
+
+### Key Features
+- Modern, mobile-optimized chat interface
+- Support for multiple Ollama models
+- Offline message queue
+- Settings management
+- Connection status indicator
+- Message history persistence
+- Dark/Light theme support
+
+### Technical Requirements
+- Flutter SDK
+- Dart programming language
+- HTTP package for API communication
+- Provider or Riverpod for state management
+- Shared Preferences for local storage
+- URL launcher for opening links
+- Connectivity package for network status
+
+### Development Phases
+1. **Phase 1: Basic Setup**
+   - Flutter project initialization
+   - Basic UI implementation
+   - Ollama API integration
+
+2. **Phase 2: Core Features**
+   - Chat interface
+   - Message history
+   - Model selection
+   - Connection management
+
+3. **Phase 3: Enhanced Features**
+   - Offline support
+   - Settings persistence
+   - Theme customization
+   - Error handling
+
+4. **Phase 4: Polish**
+   - UI/UX improvements
+   - Performance optimization
+   - Testing
+   - Documentation
+
+### Security Considerations
+- Local network communication
+- API key management
+- Data persistence
+- Input validation
+
+### Dependencies
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+  provider: ^6.0.5
+  shared_preferences: ^2.2.0
+  connectivity_plus: ^5.0.1
+  url_launcher: ^6.1.12
+  flutter_markdown: ^0.6.17
+  cached_network_image: ^3.2.3
+```
+
+## Implementation Notes
+1. The app will need to discover the Ollama server on the local network
+2. Consider implementing a QR code scanner for easy server connection
+3. Add proper error handling for network issues
+4. Implement proper state management for chat history
+5. Add loading indicators and proper feedback for user actions
